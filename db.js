@@ -1,7 +1,10 @@
 // db.js
 const mongoose = require("mongoose");
+require('dotenv').config();
 
-const mongoURL = "mongodb://127.0.0.1:27017/hotels"; // 'mangodb' nahi, 'mongodb'; 127.0.0.1 is safe
+//const mongoURL =process.env.DB_URL_LOCAL;
+
+const mongoURL = process.env.DB_URL;
 
 mongoose.connect(mongoURL) // Mongoose v7+ me extra options ki zaroorat nahin
   .then(() => console.log("✅ Connected to MongoDB"))

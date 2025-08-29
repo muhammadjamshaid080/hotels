@@ -1,6 +1,7 @@
 const express = require("express");
 const db = require("./db"); // MongoDB connection file
 const bodyParser = require("body-parser");
+require('dotenv').config();
 
 // Models
 const MenuItem = require("./models/menuItem");
@@ -34,7 +35,8 @@ app.use((req, res) => {
   });
 });
 
+const PORT= process.env.PORT || 3000;
 // Start server
-app.listen(3000, () => {
+app.listen (PORT, () => {
   console.log("🚀 Server running on http://localhost:3000");
 });
